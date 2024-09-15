@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Kiểm tra năm nhuận</title>
+    <style> 
+     body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+     }
+     input, button {
+        margin-top: 10px;
+        padding: 8px;
+     }
+     #result {
+        margin-top: 20px;
+        font-weight: bold;
+     }
+    </style>
+</head>
+<body>
+    <h1>Kiểm Tra Năm Nhuận</h1>
+    <p>Nhập năm bạn muốn kiểm tra:</p>
+    <input type="number" id="yearInput" placeholder="Nhập năm">
+    <Kiểm onclick="checkLeapYear()">Kiểm Tra </button>
+    <p id="result"></p>
+    <script>
+          function isLeapYear(year) {
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        <!--Kiểm tra kết quả-->
+
+        function checkLeapYear() {
+            var year = document.getElementById("yearInput").value;
+            var result = document.getElementById("result");
+            
+            if (year) {
+                if (isLeapYear(parseInt(year))) {
+                    result.textContent = year + " là năm nhuận.";
+                } else {
+                    result.textContent = year + " không phải là năm nhuận.";
+                }
+            } else {
+                result.textContent = "Vui lòng nhập một năm.";
+            }
+        }
+    </script>
+    </script>
+</body>
+</html>
